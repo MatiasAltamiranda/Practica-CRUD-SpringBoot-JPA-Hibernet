@@ -43,4 +43,10 @@ public class PersonaController {
 
     }
 
+    @PutMapping("/personas/v1/editar")
+    public Persona editPersona(@RequestBody Persona perso){
+        persoServ.editPersona(perso);
+        return persoServ.findPersona(perso.getId());
+    }
+
 }
